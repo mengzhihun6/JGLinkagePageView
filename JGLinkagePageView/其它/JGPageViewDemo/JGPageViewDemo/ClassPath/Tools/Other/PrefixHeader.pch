@@ -1,0 +1,31 @@
+//
+//  PrefixHeader.pch
+//  JGPageViewDemo
+//
+//  Created by 郭军 on 2018/3/12.
+//  Copyright © 2018年 JUN. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+/** 弱引用 */
+#define WEAKSELF __weak typeof(self) weakSelf = self
+
+#define WS(weakSelf) __weak __typeof(&*self)weakSelf = self;
+
+///适配相关
+#define kTopScrollerViewHight 44
+#define kScreenWidth  [UIScreen mainScreen].bounds.size.width
+#define kScreenHeight [UIScreen mainScreen].bounds.size.height
+
+#define kDeviceVersion [[UIDevice currentDevice].systemVersion floatValue]
+#define kNavbarHeight ((kDeviceVersion>=7.0)? 64 :44 )
+#define kIOS7DELTA   ((kDeviceVersion>=7.0)? 20 :0 )
+#define kTabBarHeight 49
+
+
+#endif /* PrefixHeader_pch */
